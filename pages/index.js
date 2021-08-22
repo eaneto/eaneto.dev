@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import homeStyle from '../styles/home.module.scss'
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={homeStyle.container}>
       <Head>
         <title>Edison Aguiar</title>
       </Head>
@@ -25,15 +26,24 @@ export default function Home() {
           <p>
             Software Engineer
           </p>
-
-          <Link href="https://github.com/eaneto">
-            <a>Github</a>
-          </Link>
-          <br />
-          Email:
-          <Link href="mailto:edison.aguiar.neto@gmail.com">
-            <a> edison.aguiar.neto@gmail.com</a>
-          </Link>
+          <table>
+            <tr>
+              <th>Github</th>
+              <td>
+                <Link href="https://github.com/eaneto">
+                  <a>https://github.com/eaneto</a>
+                </Link>
+              </td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>
+                <Link href="mailto:edison.aguiar.neto@gmail.com">
+                  <a>edison.aguiar.neto@gmail.com</a>
+                </Link>
+              </td>
+            </tr>
+          </table>
         </div>
       </main>
     </div>
