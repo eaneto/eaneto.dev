@@ -26,24 +26,20 @@ export default function Home() {
           <p>
             Software Engineer
           </p>
-          <table>
-            <tr>
-              <th>Github</th>
-              <td>
-                <Link href="https://github.com/eaneto">
-                  <a>https://github.com/eaneto</a>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <th>Email</th>
-              <td>
-                <Link href="mailto:edison.aguiar.neto@gmail.com">
-                  <a>edison.aguiar.neto@gmail.com</a>
-                </Link>
-              </td>
-            </tr>
-          </table>
+
+          <h2>Contact/Info</h2>
+          <ul>
+            <li>
+              <Link href="https://github.com/eaneto">
+                <a>Github</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="mailto:edison.aguiar.neto@gmail.com">
+                <a>edison.aguiar.neto@gmail.com</a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </main>
     </div>
