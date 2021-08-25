@@ -8,6 +8,7 @@ export default function Home() {
     <div className={homeStyle.container}>
       <Head>
         <title>Edison Aguiar</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
       </Head>
 
       <main>
