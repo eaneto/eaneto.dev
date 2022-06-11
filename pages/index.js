@@ -28,6 +28,9 @@ export default function Home() {
             Software Engineer
           </p>
 
+          <h2>Main interests</h2>
+          <p>Databases, Distributed Systems, Astronomy, Eletronics</p>
+
           <h2>Contact/Info</h2>
           <ul>
             <li>
@@ -39,6 +42,26 @@ export default function Home() {
               <Link href="mailto:edison.aguiar.neto@gmail.com">
                 <a>edison.aguiar.neto@gmail.com</a>
               </Link>
+            </li>
+          </ul>
+
+          <h2>Research</h2>
+          <p>
+            At my university I've done research in solar physics and databases, specifically PostgreSQL.
+            I published some papers from that research:
+          </p>
+          <ul>
+            <li>
+              <p>
+                Tracking Automation Of The 7 GHZ Solar Radio Polarimeter Using a Paramount MEII Robotic Equatorial Mount
+              </p>
+              Published at VII Brazilian Symposium on Space Geophysics and Aeronomy
+            </li>
+            <li>
+              <p>
+                Performance of serializable transactions in high concurrency scenarios in PostgreSQL (Portuguese)
+                <p>Original title: Desempenho de transações serializable em cenários de alta concorrência no PostgreSQL</p>
+              </p>
             </li>
           </ul>
         </div>
