@@ -9,6 +9,8 @@ export default function Home() {
       <Head>
         <title>Edison Aguiar</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
+        <meta name="keywords" content="Edison Aguiar,Edison Aguiar de Souza Neto" />
+        <meta name="author" content="Edison Aguiar" />
       </Head>
 
       <main>
@@ -55,12 +57,10 @@ export default function Home() {
               <p>
                 Tracking Automation Of The 7 GHZ Solar Radio Polarimeter Using a Paramount MEII Robotic Equatorial Mount
               </p>
-              Published at VII Brazilian Symposium on Space Geophysics and Aeronomy
             </li>
             <li>
               <p>
                 Performance of serializable transactions in high concurrency scenarios in PostgreSQL (Portuguese)
-                <p>Original title: Desempenho de transações serializable em cenários de alta concorrência no PostgreSQL</p>
               </p>
             </li>
           </ul>
