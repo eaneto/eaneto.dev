@@ -67,7 +67,7 @@ export default function Home() {
             </li>
             <li>
               <p>
-                Performance of serializable transactions in high concurrency scenarios in PostgreSQL (Portuguese)
+                Performance of serializable transactions in high concurrency scenarios in PostgreSQL
               </p>
             </li>
           </ul>
