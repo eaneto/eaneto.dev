@@ -1,14 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import homeStyle from '../styles/home.module.scss'
 
 export default function Home() {
   return (
-    <div className={homeStyle.container}>
+    <div>
       <Head>
         <title>Edison Aguiar</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
         <meta name="keywords" content="Edison Aguiar,Edison Aguiar de Souza Neto" />
         <meta name="author" content="Edison Aguiar" />
       </Head>
