@@ -27,11 +27,20 @@ export default function Home() {
 
         <div>
           <p>
-            Software Engineer
+            I'm a software engineer, my primary focus now is learning <a href="https://www.rust-lang.org/">rust</a> and build some systems with it.
           </p>
+          A list of things I'm building or will build:
+          <ul>
+            <li>HTTP Server</li>
+            <li>DNS Server</li>
+            <li>File System</li>
+            <li>Distributed Commmit Log</li>
+            <li>Database based on <a href="https://hstore.cs.brown.edu/">H-Store</a></li>
+            <li>Distributed In-Memory Cache</li>
+          </ul>
 
           <h2>Main interests</h2>
-          <p>Databases, Distributed Systems, Astronomy, Eletronics</p>
+          <p>Databases, Distributed Systems, Astronomy, Eletronics.</p>
 
           <h2>Contact/Info</h2>
           <ul>
