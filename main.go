@@ -29,7 +29,7 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 }
 
 func handleLinks(writer http.ResponseWriter, request *http.Request) {
-	simpleGetHandler(writer, request, "links", "Edison Aguiar - Link")
+	simpleGetHandler(writer, request, "links", "Edison Aguiar - Links")
 }
 
 func handleArticles(writer http.ResponseWriter, request *http.Request) {
