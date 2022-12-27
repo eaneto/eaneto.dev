@@ -9,6 +9,7 @@ import (
 	"github.com/eaneto/eanetodev/pagedata"
 )
 
+// TODO read file from memory
 func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templateName string, title string) {
 	if request.Method == "GET" {
 		tmplt, err := template.ParseFiles("public/template/base.html")
@@ -21,6 +22,8 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 			writer.WriteHeader(http.StatusInternalServerError)
 			return
 		}
+		// sets response as cacheable for a week
+		writer.Header().Add("Cache-Control", "public,  max-age=604800")
 		data := pagedata.New(title, template.HTML(string(content)))
 		tmplt.Execute(writer, data)
 	} else {
