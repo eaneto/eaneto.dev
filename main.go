@@ -1,19 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/eaneto/eanetodev/pagedata"
+	"github.com/eaneto/eanetodev/templatereader"
 )
 
-var templates = make(map[string][]byte)
+var templateReader = templatereader.New()
 
 func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templateName string, title string) {
 	if request.Method == "GET" {
-		content, err := readTemplateFromCacheOrFile("base")
+		content, err := templateReader.Read("base")
 		if err != nil {
 			writer.WriteHeader(http.StatusInternalServerError)
 			return
@@ -23,7 +22,7 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 			writer.WriteHeader(http.StatusInternalServerError)
 			return
 		}
-		content, err = readTemplateFromCacheOrFile(templateName)
+		content, err = templateReader.Read(templateName)
 		// sets response as cacheable for a week
 		writer.Header().Add("Cache-Control", "public,  max-age=604800")
 		data := pagedata.New(title, template.HTML(string(content)))
@@ -43,19 +42,6 @@ func handleArticles(writer http.ResponseWriter, request *http.Request) {
 
 func handleIndex(writer http.ResponseWriter, request *http.Request) {
 	simpleGetHandler(writer, request, "index", "Edison Aguiar")
-}
-
-func readTemplateFromCacheOrFile(templateName string) ([]byte, error) {
-	content, ok := templates[templateName]
-	if !ok {
-		content, err := ioutil.ReadFile(fmt.Sprintf("public/template/%s.html", templateName))
-		if err != nil {
-			return []byte{}, err
-		}
-		templates[templateName] = content
-		return content, nil
-	}
-	return content, nil
 }
 
 func main() {
