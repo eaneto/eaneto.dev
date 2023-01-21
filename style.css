@@ -11,3 +11,8 @@ nav ol {
 nav ol li {
     display: inline-block;
 }
+
+img.profile {
+    height: 13rem;
+    width: 13rem;
+}
