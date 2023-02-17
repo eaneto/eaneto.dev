@@ -59,12 +59,6 @@ func main() {
 	http.HandleFunc("/public/images/profile.jpg", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "public/images/profile.jpg")
 	})
-	http.HandleFunc("/public/pdf/resume-en.pdf", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "public/pdf/resume-en.pdf")
-	})
-	http.HandleFunc("/public/pdf/resume-pt.pdf", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "public/pdf/resume-pt.pdf")
-	})
 
 	http.ListenAndServe(":8888", nil)
 }
