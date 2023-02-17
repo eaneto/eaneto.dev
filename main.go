@@ -40,6 +40,10 @@ func handleArticles(writer http.ResponseWriter, request *http.Request) {
 	simpleGetHandler(writer, request, "articles", "Edison Aguiar - Articles")
 }
 
+func handleResume(writer http.ResponseWriter, request *http.Request) {
+	simpleGetHandler(writer, request, "resume", "Edison Aguiar - Resume")
+}
+
 func handleIndex(writer http.ResponseWriter, request *http.Request) {
 	simpleGetHandler(writer, request, "index", "Edison Aguiar")
 }
@@ -48,11 +52,18 @@ func main() {
 	http.HandleFunc("/", handleIndex)
 	http.HandleFunc("/articles", handleArticles)
 	http.HandleFunc("/links", handleLinks)
+	http.HandleFunc("/resume", handleResume)
 	http.HandleFunc("/style.css", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "style.css")
 	})
 	http.HandleFunc("/public/images/profile.jpg", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "public/images/profile.jpg")
+	})
+	http.HandleFunc("/public/pdf/resume-en.pdf", func(writer http.ResponseWriter, request *http.Request) {
+		http.ServeFile(writer, request, "public/pdf/resume-en.pdf")
+	})
+	http.HandleFunc("/public/pdf/resume-pt.pdf", func(writer http.ResponseWriter, request *http.Request) {
+		http.ServeFile(writer, request, "public/pdf/resume-pt.pdf")
 	})
 
 	http.ListenAndServe(":8888", nil)
