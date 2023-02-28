@@ -29,7 +29,6 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 		writer.Header().Add("Cache-Control", "public,  max-age=604800")
 		_, err = os.Stat(fmt.Sprintf("public/style/%s.css", templateName))
 		data := pagedata.New(templateName, title, template.HTML(string(content)), !os.IsNotExist(err))
-		fmt.Println(data.HasStyle)
 		tmplt.Execute(writer, data)
 	} else {
 		writer.WriteHeader(http.StatusMethodNotAllowed)
