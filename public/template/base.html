@@ -6,6 +6,9 @@
     <meta name="keywords" content="Edison Aguiar,Edison Aguiar de Souza Neto">
     <meta name="author" content="Edison Aguiar">
     <link rel="stylesheet" href="style.css">
+    {{ if .HasStyle }}
+    <link rel="stylesheet" href="public/style/{{ .Name }}.css">
+    {{ end }}
 </head>
 
 <body>

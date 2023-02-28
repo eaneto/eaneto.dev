@@ -3,13 +3,17 @@ package pagedata
 import "html/template"
 
 type PageData struct {
-	Title   string
-	Content template.HTML
+	Name     string
+	Title    string
+	Content  template.HTML
+	HasStyle bool
 }
 
-func New(title string, content template.HTML) PageData {
+func New(name, title string, content template.HTML, hasStyle bool) PageData {
 	return PageData{
-		Title:   title,
-		Content: content,
+		Name:     name,
+		Title:    title,
+		Content:  content,
+		HasStyle: hasStyle,
 	}
 }

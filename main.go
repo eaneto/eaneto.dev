@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 
 	"github.com/eaneto/eanetodev/pagedata"
 	"github.com/eaneto/eanetodev/templatereader"
@@ -10,7 +12,7 @@ import (
 
 var templateReader = templatereader.New()
 
-func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templateName string, title string) {
+func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templateName, title string) {
 	if request.Method == "GET" {
 		content, err := templateReader.Read("base")
 		if err != nil {
@@ -25,7 +27,9 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 		content, err = templateReader.Read(templateName)
 		// sets response as cacheable for a week
 		writer.Header().Add("Cache-Control", "public,  max-age=604800")
-		data := pagedata.New(title, template.HTML(string(content)))
+		_, err = os.Stat(fmt.Sprintf("public/style/%s.css", templateName))
+		data := pagedata.New(templateName, title, template.HTML(string(content)), !os.IsNotExist(err))
+		fmt.Println(data.HasStyle)
 		tmplt.Execute(writer, data)
 	} else {
 		writer.WriteHeader(http.StatusMethodNotAllowed)
@@ -55,6 +59,9 @@ func main() {
 	http.HandleFunc("/resume", handleResume)
 	http.HandleFunc("/style.css", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "style.css")
+	})
+	http.HandleFunc("/public/style/resume.css", func(writer http.ResponseWriter, request *http.Request) {
+		http.ServeFile(writer, request, "public/style/resume.css")
 	})
 	http.HandleFunc("/public/images/profile.jpg", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "public/images/profile.jpg")
