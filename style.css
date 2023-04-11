@@ -1,15 +1,16 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Futura PT', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
     background-color: #f1f1f1;
-    font-size: 18px;
 }
 
 main {
     max-width: 50rem;
     padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    margin: 1rem auto 6rem;
     text-align: center;
 }
 
@@ -35,14 +36,14 @@ nav ol {
 
 nav ol li {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 img.profile {
-    height: 14rem;
-    width: 14rem;
+    height: 12rem;
+    width: 12rem;
     border-radius: 50%;
 }
 

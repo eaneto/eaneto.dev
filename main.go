@@ -35,8 +35,8 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 	}
 }
 
-func handleLinks(writer http.ResponseWriter, request *http.Request) {
-	simpleGetHandler(writer, request, "links", "Edison Aguiar - Links")
+func handleBookmarks(writer http.ResponseWriter, request *http.Request) {
+	simpleGetHandler(writer, request, "bookmarks", "Edison Aguiar - Bookmarks")
 }
 
 func handleArticles(writer http.ResponseWriter, request *http.Request) {
@@ -54,7 +54,7 @@ func handleIndex(writer http.ResponseWriter, request *http.Request) {
 func main() {
 	http.HandleFunc("/", handleIndex)
 	http.HandleFunc("/articles", handleArticles)
-	http.HandleFunc("/links", handleLinks)
+	http.HandleFunc("/bookmarks", handleBookmarks)
 	http.HandleFunc("/resume", handleResume)
 	http.HandleFunc("/style.css", func(writer http.ResponseWriter, request *http.Request) {
 		http.ServeFile(writer, request, "style.css")
