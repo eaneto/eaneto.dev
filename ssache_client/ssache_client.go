@@ -14,12 +14,12 @@ func New() SSacheClient {
 	ssacheAddress := os.Getenv("SSACHE_ADDRESS")
 	addr, err := net.ResolveTCPAddr("tcp", ssacheAddress)
 	if err != nil {
-		fmt.Println("Error communication with server", err)
+		fmt.Println("Error resolving address", ssacheAddress, err)
 		return SSacheClient{conn: nil}
 	}
 	conn, err := net.DialTCP("tcp", nil, addr)
 	if err != nil {
-		fmt.Println("Error communication with server", err)
+		fmt.Println("Error communication with server", ssacheAddress, err)
 		return SSacheClient{conn: nil}
 	}
 	return SSacheClient{
