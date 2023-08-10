@@ -29,7 +29,7 @@ func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templat
 		}
 		content, err = templateReader.Read(templateName)
 		// sets response as cacheable for a week
-		writer.Header().Add("Cache-Control", "public,  max-age=604800")
+		writer.Header().Add("Cache-Control", "public,  max-age=86400")
 		_, err = os.Stat(fmt.Sprintf("public/style/%s.css", templateName))
 		data := pagedata.New(templateName, title, template.HTML(string(content)), !os.IsNotExist(err))
 		tmplt.Execute(writer, data)
