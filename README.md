@@ -1,3 +1,3 @@
-# personal site
+# Personal site
 
 https://eaneto.dev
