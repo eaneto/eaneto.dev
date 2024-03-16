@@ -21,7 +21,7 @@ func New() TemplateReader {
 func (reader *TemplateReader) Read(templateName string) ([]byte, error) {
 	content, ok := reader.Templates[templateName]
 	if !ok {
-		content, err := ioutil.ReadFile(fmt.Sprintf("public/template/%s.html", templateName))
+		content, err := ioutil.ReadFile(fmt.Sprintf("template/%s.html", templateName))
 		if err != nil {
 			return []byte{}, err
 		}

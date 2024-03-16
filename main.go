@@ -59,15 +59,6 @@ func main() {
 	http.HandleFunc("/articles", handleArticles)
 	http.HandleFunc("/bookmarks", handleBookmarks)
 	http.HandleFunc("/resume", handleResume)
-	http.HandleFunc("/public/style/base.css", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "public/style/base.css")
-	})
-	http.HandleFunc("/public/style/resume.css", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "public/style/resume.css")
-	})
-	http.HandleFunc("/public/images/profile.jpg", func(writer http.ResponseWriter, request *http.Request) {
-		http.ServeFile(writer, request, "public/images/profile.jpg")
-	})
 
 	http.ListenAndServe(":8888", nil)
 }
