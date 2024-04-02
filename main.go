@@ -7,16 +7,13 @@ import (
 	"os"
 
 	"github.com/eaneto/eanetodev/pagedata"
-	"github.com/eaneto/eanetodev/ssache_client"
 	"github.com/eaneto/eanetodev/templatereader"
 )
 
 var templateReader = templatereader.New()
-var ssacheClient = ssache_client.New()
 
 func simpleGetHandler(writer http.ResponseWriter, request *http.Request, templateName, title string) {
 	if request.Method == "GET" {
-		go ssacheClient.Incr(templateName)
 		content, err := templateReader.Read("base")
 		if err != nil {
 			writer.WriteHeader(http.StatusInternalServerError)
