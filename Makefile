@@ -1,6 +1,6 @@
 all:
 	rm -rf bin/*
-	go build -o bin/eanetodev
+	go build -buildvcs=false -o bin/eanetodev
 
 run:
 	./bin/eanetodev
