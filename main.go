@@ -54,9 +54,14 @@ func handleIndex(writer http.ResponseWriter, request *http.Request) {
 	simpleGetHandler(writer, request, "index", "Edison Aguiar")
 }
 
+func handleDatastoresDurability(writer http.ResponseWriter, request *http.Request) {
+	simpleGetHandler(writer, request, "datastores-durability", "Durability Guarantees on different datastores")
+}
+
 func main() {
 	http.HandleFunc("/", handleIndex)
 	http.HandleFunc("/articles", handleArticles)
+	http.HandleFunc("/articles/datastores-durability", handleDatastoresDurability)
 	http.HandleFunc("/bookmarks", handleBookmarks)
 	http.HandleFunc("/resume", handleResume)
 
