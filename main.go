@@ -54,6 +54,7 @@ func handleIndex(writer http.ResponseWriter, request *http.Request) {
 	// Handling cases where index is being used as a fallback for 404
 	if request.URL.Path != "/" {
 		writer.WriteHeader(http.StatusNotFound)
+		simpleGetHandler(writer, request, "404", "Not found")
 	} else {
 		simpleGetHandler(writer, request, "index", "Edison Aguiar")
 	}
