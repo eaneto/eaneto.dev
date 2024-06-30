@@ -51,7 +51,12 @@ func handleResume(writer http.ResponseWriter, request *http.Request) {
 }
 
 func handleIndex(writer http.ResponseWriter, request *http.Request) {
-	simpleGetHandler(writer, request, "index", "Edison Aguiar")
+	// Handling cases where index is being used as a fallback for 404
+	if request.URL.Path != "/" {
+		writer.WriteHeader(http.StatusNotFound)
+	} else {
+		simpleGetHandler(writer, request, "index", "Edison Aguiar")
+	}
 }
 
 func handleDatastoresDurability(writer http.ResponseWriter, request *http.Request) {
